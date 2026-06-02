@@ -25,7 +25,7 @@ def load_data() -> dict:
     return json.loads(m.group(1))
 
 
-def c_template(question: dict) -> str:
+def generate_c_file_content(question: dict) -> str:
     qid = question["id"]
     kp = question["knowledge_point"]
     title = question["title"]
@@ -98,7 +98,7 @@ def generate() -> None:
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 
     for question in data["programming_questions"]:
-        content = c_template(question)
+        content = generate_c_file_content(question)
         (OUT_DIR / question["filename"]).write_text(content, encoding="utf-8")
 
     readme = render_readme(data)
