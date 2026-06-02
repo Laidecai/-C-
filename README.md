@@ -100,5 +100,5 @@ Laidecai/-C-/
 执行命令：
 
 ```bash
-python /tmp/workspace/Laidecai/-C-/scripts/generate_chapter03_exercises.py
+python scripts/generate_chapter03_exercises.py
 ```

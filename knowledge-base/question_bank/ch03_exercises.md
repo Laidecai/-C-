@@ -39,6 +39,7 @@
     {
       "id": "P03-01",
       "filename": "p03_01_max_ternary.c",
+      "template_file": "knowledge-base/question_bank/templates/chapter03/p03_01_max_ternary.c",
       "title": "使用条件运算符求两个整数最大值",
       "knowledge_point": "条件运算符 ?:、整型输入输出",
       "prompt": "输入两个整数 a、b，输出较大值。",
@@ -50,6 +51,7 @@
     {
       "id": "P03-02",
       "filename": "p03_02_mod_negative.c",
+      "template_file": "knowledge-base/question_bank/templates/chapter03/p03_02_mod_negative.c",
       "title": "验证负数取模结果",
       "knowledge_point": "取模运算 %、输入校验（除数不能为 0）",
       "prompt": "输入两个整数 a、b（b != 0），输出 a % b 的结果。",
@@ -61,6 +63,7 @@
     {
       "id": "P03-03",
       "filename": "p03_03_type_cast_average.c",
+      "template_file": "knowledge-base/question_bank/templates/chapter03/p03_03_type_cast_average.c",
       "title": "计算两数平均值（保留两位小数）",
       "knowledge_point": "类型转换、浮点输出格式",
       "prompt": "输入两个整数 a、b，输出其平均值，保留两位小数。",

@@ -29,67 +29,10 @@ def c_template(question: dict) -> str:
     qid = question["id"]
     kp = question["knowledge_point"]
     title = question["title"]
-
-    if qid == "P03-01":
-        body = r'''#include <stdio.h>
-
-int main(void) {
-    int a, b;
-
-    if (scanf("%d%d", &a, &b) != 2) {
-        puts("输入错误");
-        return 1;
-    }
-
-    int max_value = (a > b) ? a : b;
-    printf("%d\n", max_value);
-    return 0;
-}
-'''
-    elif qid == "P03-02":
-        body = r'''#include <stdio.h>
-
-int main(void) {
-    int a, b;
-
-    if (scanf("%d%d", &a, &b) != 2) {
-        puts("输入错误");
-        return 1;
-    }
-
-    if (b == 0) {
-        puts("除数不能为0");
-        return 1;
-    }
-
-    printf("%d\n", a % b);
-    return 0;
-}
-'''
-    elif qid == "P03-03":
-        body = r'''#include <stdio.h>
-
-int main(void) {
-    int a, b;
-
-    if (scanf("%d%d", &a, &b) != 2) {
-        puts("输入错误");
-        return 1;
-    }
-
-    double avg = ((double)a + (double)b) / 2.0;
-    printf("%.2f\n", avg);
-    return 0;
-}
-'''
-    else:
-        body = r'''#include <stdio.h>
-
-int main(void) {
-    puts("TODO: implement");
-    return 0;
-}
-'''
+    template_file = question.get("template_file")
+    if not template_file:
+        raise ValueError(f"{qid} 缺少 template_file 字段")
+    body = (REPO / template_file).read_text(encoding="utf-8")
 
     header = f'''/*
  * 题号：{qid}
@@ -143,7 +86,7 @@ def render_readme(data: dict) -> str:
         "## 三、使用方式",
         "",
         "```bash",
-        "python /tmp/workspace/Laidecai/-C-/scripts/generate_chapter03_exercises.py",
+        "python scripts/generate_chapter03_exercises.py",
         "```",
         "",
     ]
