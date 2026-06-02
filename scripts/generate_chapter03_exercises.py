@@ -93,7 +93,7 @@ def render_readme(data: dict) -> str:
     return "\n".join(lines)
 
 
-def generate() -> None:
+def generate_chapter03_exercises() -> None:
     data = load_data()
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -106,4 +106,4 @@ def generate() -> None:
 
 
 if __name__ == "__main__":
-    generate()
+    generate_chapter03_exercises()
