@@ -39,7 +39,26 @@
 
 > 每章包含 5 题，并已补齐：题目、输入要求、输出要求、样例输入、样例输出、参考答案模板。
 
-## 三、题库扩展规范（增强版）
+## 三、知识库与自动生成目录
+
+```text
+Laidecai/-C-/
+├── .github/
+│   └── copilot-instructions.md
+├── knowledge-base/
+│   ├── textbook_chapters/
+│   └── question_bank/
+├── exercises/
+│   └── chapter03/
+└── scripts/
+```
+
+- `knowledge-base/textbook_chapters/`：教材章节知识点改写摘要。
+- `knowledge-base/question_bank/`：结构化题库源数据（章节 JSON/MD）。
+- `scripts/`：从知识库自动生成习题索引与代码模板的脚本。
+- `exercises/chapter03/`：第三章自动生成产物（阅读题答案索引 + 编程题 C 源码）。
+
+## 四、题库扩展规范（增强版）
 
 ### 1) 目录与命名规范
 
@@ -71,3 +90,15 @@
 - 每章补充“基础/进阶/挑战”分层题单。
 - 为代码题增加边界样例（空输入、极值、异常输入）。
 - 后续可加入自动评测字段：`time_limit`、`memory_limit`、`checker`。
+
+## 五、Chapter03 自动拉取与生成
+
+从以下源文件自动生成第三章作业目录：
+
+- `knowledge-base/question_bank/ch03_exercises.md`
+
+执行命令：
+
+```bash
+python /tmp/workspace/Laidecai/-C-/scripts/generate_chapter03_exercises.py
+```
